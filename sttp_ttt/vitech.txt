@@ -1,0 +1,431 @@
+ 
+VI_TECHPEDIA
+Starting vi
+You may use vi to create a new file or open an already existing file by typing 
+vi filename
+ 
+vi Modes
+vi has two modes: 
+1.       command mode 
+2.       insert mode 
+In command mode, the letters of the keyboard perform editing functions (like moving the cursor, deleting text, etc.). To enter command mode, press the escape <Esc> key. 
+In insert mode, the letters you type form words and sentences. Unlike many word processors, vi starts up in command mode. 
+Entering Text
+In order to begin entering text in this empty file, you must change from command mode to insert mode. To do this, type i
+Nothing appears to change, but you are now in insert mode and can begin typing text.
+ 
+Moving the Cursor
+To move the cursor to another position, you must be in command mode. If you have just finished typing text, you are still in insert mode. Go back to command mode by pressing <Esc>. If you are not sure which mode you are in, press <Esc> once or twice until you hear a beep. When you hear the beep, you are in command mode. 
+The cursor is controlled with four keys: h, j, k, l. 
+Key Cursor Movement
+--- ---------------
+h left one space j down one line 
+l right one space k up one line
+When you have gone as far as possible in one direction, the cursor stops moving and you hear a beep. For example, you cannot use l to move right and wrap around to the next line, you must use j to move down a line. See the section entitled "Moving Around in a File" for ways to move more quickly through a file. 
+ 
+Basic Editing
+Editing commands require that you be command mode. Many of the editing commands have a different function depending on whether they are typed as upper- or lowercase. Often, editing commands can be preceded by a number to indicate a repetition of the command. 
+Deleting Characters
+To delete a character from a file, move the cursor until it is on the incorrect letter, then type x
+The character under the cursor disappears. To remove four characters (the one under the cursor and the next three) type 4x
+To delete the character before the cursor, type X (uppercase)
+ 
+Deleting Words
+To delete a word, move the cursor to the first letter of the word, and type dw
+This command deletes the word and the space following it. 
+To delete three words type 3dw
+ 
+Deleting Lines
+To delete a whole line, type dd
+The cursor does not have to be at the beginning of the line. Typing dd deletes the entire line containing the cursor and places the cursor at the start of the next line. To delete two lines, type 2dd
+To delete from the cursor position to the end of the line, type D (uppercase)
+Replacing Characters
+To replace one character with another: 
+Move the cursor to the character to be replaced. 
+Type r 
+Type the replacement character. 
+The new character will appear, and you will still be in command mode. 
+ 
+Replacing Words
+To replace one word with another, move to the start of the incorrect word and type cw
+The last letter of the word to be replaced will turn into a $. You are now in insert mode and may type the replacement. The new text does not need to be the same length as the original. Press <Esc> to get back to command mode. To replace three words, type 3cw
+ 
+Replacing Lines
+To change text from the cursor position to the end of the line: 
+Type C (uppercase). 
+Type the replacement text. 
+Press <Esc>. 
+Inserting Text
+To insert text in a line: 
+Position the cursor where the new text should go. 
+Type i 
+Enter the new text. The text is inserted BEFORE the cursor. 
+4. Press <Esc> to get back to command mode. 
+ 
+Appending Text
+To add text to the end of a line: 
+Position the cursor on the last letter of the line. 
+Type a 
+Enter the new text. This adds text AFTER the cursor. 
+4. Press <Esc> to get back to command mode. 
+ 
+Opening a Blank Line
+To insert a blank line below the current line, type o (lowercase) 
+To insert a blank line above the current line, type O (uppercase)
+ 
+Joining Lines
+To join two lines together: 
+Put the cursor on the first line to be joined. 
+Type J 
+To join three lines together: 
+Put the cursor on the first line to be joined. 
+Type 3J 
+Undoing
+To undo your most recent edit, type u
+To undo all the edits on a single line, type U (uppercase)
+Undoing all edits on a single line only works as long as the cursor stays on that line. Once you move the cursor off a line, you cannot use U to restore the line. 
+ 
+Moving Around in a File
+There are shortcuts to move more quickly though a file. All these work in command mode. 
+Key Movement
+--- --------
+w forward word by word
+b backward word by word 
+$ to end of line
+0 (zero) to beginning of line
+H to top line of screen
+I to start of line
+A to end of line
+M to middle line of screen
+L to last line of screen
+G to last line of file
+1G to first line of file
+( move backward to first character in block space
+) move forward to first character in block space
+<Control>f scroll forward one screen
+<Control>b scroll backward one screen
+<Control>d scroll down one-half screen
+<Control>u scroll up one-half screen
+<Control>N moves to end of line starting top to bottom
+<Control>P moves to end of line starting bottom to top
+% to locate matching braces 
+ 
+Moving by Searching
+To move quickly by searching for text, while in command mode: 
+1.  Type / (slash).:   Enter the text to search for : Press <Return>.:The cursor moves to the first occurrence of that 
+     text. :To repeat the search in a forward direction, type n  :To repeat the search in a backward direction, type N
+2.  # moves to the similar word in the file
+ 
+Closing and Saving a File
+With vi, you edit a copy of the file, rather than the original file. Changes are made to the original only when you save your edits. 
+To save the file and quit vi, type ZZ  or  Press <Esc>. Type :w  Press <Return>. 
+To quit vi, and discard any changes your have made since last saving: Press <Esc>. Type :q! Press <Return>. 
+ 
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ 
+Working with multiple files
+:e filename - Edit a file in a new buffer 
+:bnext (or :bn) - go to next buffer 
+:bprev (of :bp) - go to previous buffer 
+:bd - delete a buffer (close a file) 
+:sp filename - Open a file in a new buffer and split window 
+ctrl+ws - Split windows 
+ctrl+ww - switch between windows 
+ctrl+wq - Quit a window 
+ctrl+wv - Split windows vertically 
+ 
+ 
+Customization of VI (vim): Mapping keys as command keyboard shortcuts
+Background:
+Key mapping can be used to change the meaning of typed keys. The most common use is to create shortcuts for VI. These mappings can be set in Insert, Replace, Command mode and Visual mode.
+There are commands to enter new mappings, remove mappings, and list mappings. In general, add "new mappings" commands in your home directory's ".vimrc" file (i.e. "vi ~/.vimrc" and add the lines). This saves the commands for all future VI sessions for the user. During an active VI session we can add new / list / remove mappings.
+The mapping command in general looks like:
+imap <key_binding> <mapping_expression> => Insert mode
+vmap <key_binding> <mapping_expression> => Visual mode
+Examples:
+Here are sample mappings useful for most common tasks:
+Please note, <C-o> means Ctrl+o, <C-s> => Ctrl+s etc.
+1. Copy selected text (in VISUAL mode):
+vmap <C-c> y
+2. Paste yanked text (in INSERT mode):
+imap <C-v> <esc>pi
+3. Save a file (in INSERT mode):
+imap <F2> <esc>:w<enter>i
+4. Save the file and quit (in INSERT mode):
+imap <F3> <esc>:wq<enter>
+5. Quit without saving a file (in INSERT mode):
+imap <F4> <esc>:q!<enter>
+6. Create a new window and start editing an empty file (in INSERT mode):
+imap <C-n> <esc>:new<enter>
+This allows nested and recursive use of mappings, meaning as "mapping_expression" we can specify existing other mapping shortcut "key_binding". 
+For example, add a mapping of keys to "create a new empty split window and paste yanked text" (in INSERT mode):
+imap <C-t> <C-n>i<C-v>
+ 
+ 
+ 
+ 
+ 
+Customization of VI (vim): Abbreviations
+Background:
+The abbreviations can be used in Insert, Replace, Command mode. If we enter a word that is an abbreviation, it is replaced with the word it stands for. The abbreviations can be used for faster and efficient editing, and automatically correct obvious spelling mistakes. This is customizable AUTO-COMPLETE feature. There are no default abbreviations, and they are never recursive. 
+In general, add "abbreviations" commands in your home directory's ".vimrc" file (i.e. "vi ~/.vimrc" and add the lines). This saves the commands for all future VI sessions for the user. During an active VI session we can add new / list / remove abbreviations.
+The abbreviations command in general looks like:
+iab <abbreviation> <expanded_text_for_abbreviation> => Insert mode
+To list active abbreviations, go to command mode with <ESC> key and enter
+:ab
+Examples:
+Here are sample abbreviations useful for common 'C' programming constructs (in INSERT mode):
+1. Include file statement:
+iab #i #include<.h><left><left><left><left>
+2. Conditional statement/loops:
+iab if if(){<enter>}
+iab while while(){<enter>}
+iab for for( ; ; ){<enter>}
+iab switch switch(){<enter>default:<enter>break;<enter>}
+3. "PRINTF / PRINTK" statement:
+iab printf printf("\n");<left><left><left><left><left>
+iab printk printk(KERN_DEBUG "\n");<left><left><left><left><left>
+Here are sample abbreviations useful for spelling / long words (in INSERT mode):
+iab EIC eInfochips Ltd.
+iab MS Microsoft
+iab tihs this
+iab linux Linux
+The abbreviations are replaced after the CURSOR, and in insert mode "SPACE" character is the cursor.
+e.g. If you enter "#i<space>" in insert mode, it will be replaced with "#include <.h>". But "#inc<space>" will not be replaced.
+ 
+ 
+ 
+NOTE: The auto format and indentation commands also work in visual mode, or can be repeated to operate on current line (e.g. >>, <<, ==). The 'f'/'F'/'t'/'T' can be combined with delete, yank, a number for more meaningful purpose other than just cursor movement.
+All the commands are valid after going to VI command mode using “ESC” key.
+Some useful VIM command line options:
++[number]
+For the first file the cursor will be positioned on line “number”. If number is missing, the cursor will be positioned on the last line.
++/{pattern}
+For the first file the cursor will be positioned on the first occurrence of {pattern}.
+-m
+Modifying files is disabled. This resets the “write” option, so the buffers can still be modified but write to file is not allowed.
+-M
+Modifications are not allowed. This resets the “modifiable” and “write” options, so the changes in buffer is not allowed and file write is also not allowed. Note that these options can be set to enable making modifications.
+-R
+Read-only mode. This sets “readonly” option. You can still edit the buffer, but will be prevented from accidently overwriting a file.
+ 
+ 
+ 
+7th Oct:
+VI_TECHPEDIA:
+ 
+Compiling source code within VIM:
+Vim has a set of "quickfix" commands. They enable developers to compile a program from within VIM and then go through the errors generated and edit/fix them. We can then recompile and fix any new errors until the program compiles without any error.
+IMPORTANT: To use this feature MAKEFILE is a must.
+The following command runs the program make along with supplied argument and captures the results:
+          :make {arguments}
+If the errors were generated, they are captured and VI editor positions where the first error occurred. VIM has commands to list all the errors, and navigate between them.
+:cn[ext]        Move to next error
+:cp[revious]   Move to previous error
+:cl[ist]           List all errors
+:cfir[st]         Display the FIRST error
+:cla[st]          Display the LAST error
+:cc [nr]         Display a specific error, if nr is omitted the same error is displayed
+:cnf[ile]         Display first error in next file
+:cope[n]        Open a window to show current list of errors
+Using this window, like any other IDE you can move your cursor to any error/warning line and hit ENTER to go to the relevant source code line.
+This is an example you can try out to see this amazing feature of VIM:
+>>>>> Makefile <<<<<
+INCLUDES = -I.
+CFLAGS   = $(INCLUDES) -g
+LDFLAGS = 
+OBJECTS = test.o
+test.o: test.c
+      gcc $(CFLAGS) -c $^ -o $@
+app: $(OBJECTS)
+      gcc $(OBJECTS) $(LDFLAGS) -o $@
+clean:
+      rm -f *.o app
+all: app
+<<<<< 
+>>>>> test.c <<<<<
+1 #include <stdio.h>
+2 
+3 int test_cnt = 0;
+4 
+5 int main(int argc, char *argv[])
+6 {
+7         int test = 0;
+8 
+9         test_cnt = argc - 1;
+10        if(test_flag){
+11                 printf("%s: Argument count %d\n", argv[0], test_cnt);
+12                 display_args(&argv[1]);
+13         }
+14 
+15         return 0;
+16 }
+17 
+18 void display_args(char *argv[])
+19 {
+20         int cnt = 0;
+21 
+22         if(test_cnt){
+23                 for(cnt = 0; cnt < test_cnt; cnt++){
+24                         printf("arg[%d] = %s\n", cnt + 1, argv[cnt]);
+25                 }
+26         }
+27 }
+<<<<< 
+>>>>> THE OUTPUT <<<<<
+gcc -I. -g -c test.c -o test.o
+test.c: In function âmainâ:
+test.c:10: error: âtest_flagâ undeclared (first use in this function)
+test.c:10: error: (Each undeclared identifier is reported only once
+test.c:10: error: for each function it appears in.)
+test.c: At top level:
+test.c:19: warning: conflicting types for âdisplay_argsâ
+test.c:12: warning: previous implicit declaration of âdisplay_argsâ was here
+make: *** [test.o] Error 1
+Press ENTER or type command to continue
+<<<<< 
+ 
+ 
+ 
+ 
+ 
+Editing multiple files/buffers using VIM windows:
+We can use multiple windows on one buffer, or several windows on different buffers.
+VI refers a buffer as a file loaded in memory for editing, the original file remains unchanged until the buffer write command like "w".
+All the window commands start with "Ctrl+W", the same commands can be executed with ":wincmd".
+Opening window:
+CTRL+W s     Split the current window in two
+CTRL+W S
+:sp[lit]
+CTRL+W v     Vertically split the current window in two
+:vs[plit]
+CTRL+W n     Create a new window with empty file
+:new
+:vne[w]         Create a new window with empty file, but split vertically
+Closing window:
+CTRL+W q     Quit the current window
+:q[uit]
+Moving between windows:
+CTRL+W <down>     Move cursor to window below current one
+CTRL+W j
+CTRL+W <up>         Move cursor to window above current one
+CTRL+W k
+CTRL+W <left>        Move cursor to window left of current one
+CTRL+W h
+CTRL+W <right>      Move cursor to window right of current one
+CTRL+W l
+CTRL+W w               Move cursor to window below/right of current one
+CTRL+W W              Move cursor to window above/left of current one
+CTRL+W t                Move cursor to top-left window
+CTRL+W b               Move cursor to bottom-right window
+ 
+ 
+VI Editor commands:
+Copy single line
+yy
+Cut single line
+dd
+Paste the copied or cut text
+p
+Go to header file (take cursor to header file name)
+gf
+Go to Visual mode
+v
+Copy selected text in visual mode
+y 
+Cut selected text in visual mode
+d
+Paste copied or cut text in visual mode
+p
+Save file
+:w
+Jump between matching pairs of ‘(‘ ‘)’, ‘[‘ ‘]’, ‘{‘ ‘}’, etc
+%
+Jump cursor to TOP of the current visible screen
+H
+Jump cursor to MIDDLE of the current visible screen
+M
+Jump cursor to BOTTOM of the current visible screen
+L
+Jump to EOF (end of file)
+G
+Jump to specified line #
+e.g. To go to line# 100 command mode keystrokes are:
+100G
+<line#>G
+Jump to Previous line
+- / k
+Jump to Next line
++ / j
+Jump to Previous EMPTY line
+{
+Jump to Next EMPTY line
+}
+Jump to Previous ‘{‘ in column 0
+Useful for jump to previous function’s start point
+[[
+Jump to Next ‘{‘ in column 0
+Useful for jump to next function’s start point
+]]
+Join the current line with next one, or all lines in current visual selection
+J
+Replace character under cursor
+r<any_char>
+Change till end of line
+i.e. Delete from cursor to end of line and enter in INSERT mode
+C / c$
+Delete till end of line
+i.e. Delete from cursor to end of line
+D / d$
+Yank current line
+i.e. Copy the entire line in VI clipboard
+Y / yy
+Delete the character under cursor and enter in INSERT mode
+s
+Clear current line and enter in INSERT mode
+S
+Toggle case of character under cursor
+~
+Basic search motion
+/<text_to_search>
+Basic search motion in BACKWARD direction
+?<text_to_search>
+Repeat the last search in same direction
+n
+Repeat the last search in REVERSE direction
+N
+Search FORWARD for the next instance of the identifier under the cursor
+*
+Search BACKWARD for the next instance of the identifier under the cursor
+#
+Set a mark (this is what we refer as bookmarks in editors)
+The <mark_character> is any single character:
+'a' - 'z' for local to only current buffer/file
+'A' - 'Z' for global marks (useful for editing multiple files at a time)
+m<mark_character>
+Go to a mark (note the character is not single quote, it is special character just before '1' key on keyboard)
+`<mark_character>
+Auto format the text
+= and a motion to reformat a range of text
+Indent the text to next level
+> and a motion to indent one or more lines
+Un-indent the text
+< and a motion to un-indent
+Jump to help for the word under cursor (vim help, man page etc)
+K
+Move the cursor to the next instance of a character on the current line
+e.g. f, => Move cursor to next comma
+f) => Move cursor to next ')'
+f<character_to_search>
+Move the cursor to the next instance of a character on the current line in BACKWARD direction
+F<character_to_search>
+Move the cursor to just before the next instance of a character on the current line
+e.g. f, => Move cursor to just before next comma
+f) => Move cursor to just before next ')'
+t<character_to_search>
+Move the cursor to just before the next instance of a character on the current line in BACKWARD direction
+T<character_to_search>
+All the commands (except visual mode copy/cut/paste commands) are valid after going to VI command mode using “ESC” key.
+ 
+ 
+

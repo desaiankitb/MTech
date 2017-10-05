@@ -1,0 +1,15 @@
+how to run file...
+
+1. copy FIRST_FO.CPP and gram5.txt files into same folder
+
+2. open terminal(shell)  to compile and execute the program
+
+3. reach up the path where you have copy both the files
+
+4. compile FIRST_FO.CPP by giving "g++ FIRST_FO.CPP -o ff"
+
+5. after successful compilition it must create ff in to same directory
+
+6. to execute the program give "./ff gram5.txt
+
+7. the program is menu driven program so according to the user's choice it will disply the o/p.

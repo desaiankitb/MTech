@@ -1,0 +1,4 @@
+
+yacc -d .y_file (y.tab.c,y.yab.h)
+lex .l_file (yy.lex.c)
+gcc tab.c yy.lex.c -o x.out -ll

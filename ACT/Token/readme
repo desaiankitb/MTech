@@ -1,0 +1,15 @@
+how to run file...
+
+1. copy lax_t.c and test.c files into same folder
+
+2. open terminal(shell)  to compile and execute the program
+
+3. reach up the path where you have copy both the files
+
+4. compile lax_t.c by giving "gcc lax_t.c -o lax_t"
+
+5. after successful compilition it must create lax_t in to same directory
+
+6. to execute the program give "./.lax_t test.c
+
+7. it will display the output.

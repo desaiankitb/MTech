@@ -1,0 +1,19 @@
+how to run file...
+
+1. copy count.l and input.txt files into same folder
+
+2. open terminal(shell)  to compile and execute the program
+
+3. reach up the path where you have copy both the files
+
+4. compile lex program count.l by giving "lex count.l"
+
+5. after successful compilition it must create lex.yy.c in to same directory
+
+6. now compile .c program by "gcc lex.yy.c -ll"
+
+7. after successful compilation its must create a.out in to same directory
+ 
+8. to execute the program type ./a.out < input.txt
+
+9. this will display the output by counting number of line and words and characters in to input.txt. 

@@ -1,0 +1,21 @@
+how to run file...
+
+1. copy calc.l and input.txt files into some folder
+
+2. open terminal(shell)  to compile and execute the program
+
+3. reach up the path where you have copy the file
+
+4. compile lex program calc.l by giving "lex calc.l"
+
+5. after successful compilition it must create lex.yy.c in to same directory
+
+6. now compile .c program by "gcc lex.yy.c -ll"
+
+7. after successful compilation its must create a.out in to same directory
+ 
+8. to execute the program type ./a.out < input.txt
+
+9. program will fatch the content of the input file and will show the output based on fatched content.
+
+10. if you want to taste the output for other than given streams you can edit the input.txt file.
