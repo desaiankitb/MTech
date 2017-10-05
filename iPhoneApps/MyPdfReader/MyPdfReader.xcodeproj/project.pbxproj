@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04A524FF1732591200B23AA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A524FE1732591200B23AA5 /* UIKit.framework */; };
+		04A525011732591200B23AA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A525001732591200B23AA5 /* Foundation.framework */; };
+		04A525031732591200B23AA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A525021732591200B23AA5 /* CoreGraphics.framework */; };
+		04A525091732591200B23AA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A525071732591200B23AA5 /* InfoPlist.strings */; };
+		04A5250B1732591200B23AA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5250A1732591200B23AA5 /* main.m */; };
+		04A5250F1732591200B23AA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A5250E1732591200B23AA5 /* AppDelegate.m */; };
+		04A525121732591200B23AA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A525111732591200B23AA5 /* ViewController.m */; };
+		04A525151732591200B23AA5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A525131732591200B23AA5 /* ViewController.xib */; };
+		04A5251D17325A7400B23AA5 /* HR Policies.pdf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 04A5251C17325A7400B23AA5 /* HR Policies.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04A5251B17325A5000B23AA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				04A5251D17325A7400B23AA5 /* HR Policies.pdf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04A524FA1732591200B23AA5 /* MyPdfReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPdfReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A524FE1732591200B23AA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04A525001732591200B23AA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04A525021732591200B23AA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04A525061732591200B23AA5 /* MyPdfReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyPdfReader-Info.plist"; sourceTree = "<group>"; };
+		04A525081732591200B23AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04A5250A1732591200B23AA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04A5250C1732591200B23AA5 /* MyPdfReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPdfReader-Prefix.pch"; sourceTree = "<group>"; };
+		04A5250D1732591200B23AA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04A5250E1732591200B23AA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04A525101732591200B23AA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04A525111732591200B23AA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04A525141732591200B23AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		04A5251C17325A7400B23AA5 /* HR Policies.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "HR Policies.pdf"; path = "../../../Images/HR Policies.pdf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04A524F71732591200B23AA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A524FF1732591200B23AA5 /* UIKit.framework in Frameworks */,
+				04A525011732591200B23AA5 /* Foundation.framework in Frameworks */,
+				04A525031732591200B23AA5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04A524EF1732591100B23AA5 = {
+			isa = PBXGroup;
+			children = (
+				04A5251C17325A7400B23AA5 /* HR Policies.pdf */,
+				04A525041732591200B23AA5 /* MyPdfReader */,
+				04A524FD1732591200B23AA5 /* Frameworks */,
+				04A524FB1732591200B23AA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04A524FB1732591200B23AA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04A524FA1732591200B23AA5 /* MyPdfReader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04A524FD1732591200B23AA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04A524FE1732591200B23AA5 /* UIKit.framework */,
+				04A525001732591200B23AA5 /* Foundation.framework */,
+				04A525021732591200B23AA5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04A525041732591200B23AA5 /* MyPdfReader */ = {
+			isa = PBXGroup;
+			children = (
+				04A5250D1732591200B23AA5 /* AppDelegate.h */,
+				04A5250E1732591200B23AA5 /* AppDelegate.m */,
+				04A525101732591200B23AA5 /* ViewController.h */,
+				04A525111732591200B23AA5 /* ViewController.m */,
+				04A525131732591200B23AA5 /* ViewController.xib */,
+				04A525051732591200B23AA5 /* Supporting Files */,
+			);
+			path = MyPdfReader;
+			sourceTree = "<group>";
+		};
+		04A525051732591200B23AA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04A525061732591200B23AA5 /* MyPdfReader-Info.plist */,
+				04A525071732591200B23AA5 /* InfoPlist.strings */,
+				04A5250A1732591200B23AA5 /* main.m */,
+				04A5250C1732591200B23AA5 /* MyPdfReader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04A524F91732591200B23AA5 /* MyPdfReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A525181732591200B23AA5 /* Build configuration list for PBXNativeTarget "MyPdfReader" */;
+			buildPhases = (
+				04A524F61732591200B23AA5 /* Sources */,
+				04A524F71732591200B23AA5 /* Frameworks */,
+				04A524F81732591200B23AA5 /* Resources */,
+				04A5251B17325A5000B23AA5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyPdfReader;
+			productName = MyPdfReader;
+			productReference = 04A524FA1732591200B23AA5 /* MyPdfReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04A524F11732591100B23AA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 04A524F41732591100B23AA5 /* Build configuration list for PBXProject "MyPdfReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04A524EF1732591100B23AA5;
+			productRefGroup = 04A524FB1732591200B23AA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04A524F91732591200B23AA5 /* MyPdfReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04A524F81732591200B23AA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A525091732591200B23AA5 /* InfoPlist.strings in Resources */,
+				04A525151732591200B23AA5 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04A524F61732591200B23AA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A5250B1732591200B23AA5 /* main.m in Sources */,
+				04A5250F1732591200B23AA5 /* AppDelegate.m in Sources */,
+				04A525121732591200B23AA5 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		04A525071732591200B23AA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A525081732591200B23AA5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04A525131732591200B23AA5 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A525141732591200B23AA5 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04A525161732591200B23AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04A525171732591200B23AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04A525191732591200B23AA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyPdfReader/MyPdfReader-Prefix.pch";
+				INFOPLIST_FILE = "MyPdfReader/MyPdfReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04A5251A1732591200B23AA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyPdfReader/MyPdfReader-Prefix.pch";
+				INFOPLIST_FILE = "MyPdfReader/MyPdfReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04A524F41732591100B23AA5 /* Build configuration list for PBXProject "MyPdfReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A525161732591200B23AA5 /* Debug */,
+				04A525171732591200B23AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A525181732591200B23AA5 /* Build configuration list for PBXNativeTarget "MyPdfReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A525191732591200B23AA5 /* Debug */,
+				04A5251A1732591200B23AA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04A524F11732591100B23AA5 /* Project object */;
+}
