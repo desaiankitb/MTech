@@ -1,0 +1,2 @@
+please write complexities of the programs where its not maintion 
+write worst case complexities and verify the existings for which u have any idea.

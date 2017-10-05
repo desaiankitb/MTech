@@ -1,0 +1,105 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<math.h>
+#include<stdlib.h>
+
+#define MAX 100
+
+int mfact[MAX],nfact[MAX],count=1,mfactcnt=0,nfactcnt=0;
+
+int chkPrime(int i)
+{
+	int j,flag=0;	
+	for(j=2;j<=i;j++)
+	{
+		if(i%j == 0)
+			{flag = 1; break;}
+		else
+			flag = 0;
+	}
+	if(flag == 0)
+	{
+		return 0;
+	}
+	return 1;
+}
+
+void findprime(int *arr,int no)
+{
+	int i,j,flag=0,k=0,no1=no;
+	for(i=0;i<=MAX;i++)
+	{
+		arr[i] = 0;
+	}
+	for(i=2;i<=no || chkPrime(no);)
+	{
+		if(no%i == 0)
+		{
+			no = no / i;
+			if(chkPrime(i))
+			{
+				arr[k] = i;
+				k++;
+				continue;
+			}
+		}
+		else
+		{
+			i++;
+			continue;
+		}
+	}
+
+	printf("%d's factor are:\n",no1);
+	for(j=0;j<k;j++)
+	{		
+		printf("%d\n",arr[j]);
+		if(count==1)
+			{mfact[j] = arr[j];mfactcnt++;}
+		else 
+			{nfact[j] = arr[j];nfactcnt++;}
+	}
+	count++;
+}
+
+
+void commonfactors()
+{
+	int i,j,min,ans=1;
+	if(mfactcnt > nfactcnt)
+	min = nfactcnt;
+	else
+	min = mfactcnt;
+	
+	for(i=0;i<mfactcnt;i++)
+	{
+		for(j=0;j<nfactcnt;j++)
+		{
+			if(mfact[i] == nfact[j])
+			{
+				nfact[j] = 0;
+				ans = ans * mfact[i];
+				break;
+			}
+			else
+				continue;
+		}
+	}
+	printf("ans:%d\n",ans);
+}
+
+int main(int argc,char **argv)
+{
+	int p,i,j,k=0;
+	int x;
+	int mf[MAX],nf[MAX],m,n;
+	m = atoi(argv[1]);
+	n = atoi(argv[2]);
+	
+	findprime(mf,m);
+	findprime(nf,n);
+	
+	commonfactors();
+	return 0;
+}
+

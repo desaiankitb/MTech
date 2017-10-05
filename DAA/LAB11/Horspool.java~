@@ -1,0 +1,40 @@
+class Horspool
+{
+	static int table[] = new int[26];
+	//static char pattern[] = {'B','A','R','B','E','R'};
+	//static char text[] = {'J','I','M','S','A','W','M','E','I','N','A','B','A','R','B','E','R','S','H','O','P'};
+	static char pattern[] = {'A'};
+	static char text[] = {'J','I','M','S','A','W','M','E','I','N','A','B','A','R','B','E','R','S','H','O','P'};
+	public static void main(String args[])
+	{
+		int m = pattern.length;
+		for(int j=0; j<table.length-1; j++)
+		{
+			table[j] = pattern.length;
+		}
+
+		for(int j=0; j<=m-2; j++)
+		{
+			
+			table[((int)pattern[j])%65] = m-1-j;
+			System.out.println("for pattern char:"+pattern[j]+table[((int)pattern[j])%65]);
+		}
+		int i = m-1;
+		int n = text.length;
+		while(i <= n-1)
+		{
+			int k = 0;
+			while( k < m && pattern[m-k-1] == text[i-k])
+			{
+				k = k + 1;
+			}
+			if(k == m){
+				System.out.println("pattern occurs at:"+(i-m+2));
+				i = i + table[((int)text[i])%65];
+			}
+			else{
+				i = i + table[((int)text[i])%65];
+			}
+		}
+	}
+}

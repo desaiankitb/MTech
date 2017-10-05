@@ -1,0 +1,63 @@
+class Knapsack
+{
+
+	public static void main(String args[])
+	{
+		float weight = 0.0f;
+		float wArr[] = {10.0f,20.0f,30.0f,40.0f,50.0f};
+		float resultArr[] = {0.0f,0.0f,0.0f,0.0f,0.0f};
+		float proArr[] = {20.0f,30.0f,66.0f,40.0f,60.0f};
+		float ratioArr[] = {0.0f,0.0f,0.0f,0.0f,0.0f};
+		float totalWeight = 100.0f;
+		float totalProfit = 0.0f;
+		for(int i=0;i<ratioArr.length;i++)
+		{
+			ratioArr[i] = (float) ((float)proArr[i] / (float)wArr[i]);
+		}
+		for(int i=0;i<ratioArr.length;i++)
+		{
+			for(int j=i+1;j<ratioArr.length;j++)
+			{
+				if(ratioArr[i] < ratioArr[j])
+				{
+					float temp = ratioArr[i];
+					ratioArr[i] = ratioArr[j];
+					ratioArr[j] = temp;
+					
+					temp = wArr[i];
+					wArr[i] = wArr[j];
+					wArr[j] = temp;
+					
+					temp = proArr[i];
+					proArr[i] = proArr[j];
+					proArr[j] = temp;
+				}
+			}
+		}
+		for(int i=0;i<ratioArr.length;i++)
+		{
+			System.out.println(ratioArr[i]+"\t:\t"+proArr[i]+"\t:\t"+wArr[i]);
+		}
+		
+		for(int i=0;i<wArr.length;i++)
+		{
+			if(weight+wArr[i] <= totalWeight)
+			{
+				totalProfit = totalProfit + proArr[i];
+				weight = weight + wArr[i];
+				resultArr[i]++;
+			}
+			else
+			{
+				totalProfit = totalProfit + (((totalWeight - weight)/wArr[i])*proArr[i]);
+				resultArr[i] = ((totalWeight - weight)/wArr[i]);
+				break;
+			}
+		}
+		for(int i=0;i<resultArr.length;i++)
+		{
+			System.out.println(resultArr[i]);
+		}
+		System.out.println("profilt="+totalProfit);
+	}
+}

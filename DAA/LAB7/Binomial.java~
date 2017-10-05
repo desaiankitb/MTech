@@ -1,0 +1,41 @@
+class Binomial
+{
+	public static void main(String args[])
+	{
+//		int ans=1;
+		int f[][] = new int[Integer.parseInt(args[0])+2][Integer.parseInt(args[1])+2];//{1,0,0,0,0,0,0,0,0,0,1};
+		if(Integer.parseInt(args[0]) < Integer.parseInt(args[1]) )
+		{
+			System.out.println("0");
+			//exit(1);
+		}
+		for(int n=0;n<=Integer.parseInt(args[0])+1;n++)
+		{
+			for(int k=0;k<=Integer.parseInt(args[1])+1;k++)
+			{
+				if(n==k)
+					f[n][k] = 1;
+			}
+		}
+		for(int n=0;n<=Integer.parseInt(args[0])+1;n++)
+		{
+			for(int k=0;k<=Integer.parseInt(args[1])+1;k++)
+			{
+				if(n>k)
+					f[n][k] = 0;
+			}
+		}
+		
+		for(int n=1;n<=Integer.parseInt(args[0])+1;n++)
+		{
+			for(int k=1;k<=Integer.parseInt(args[1])+1;k++)
+			{
+				f[n][k] = f[n-1][k-1] + f[n-1][k];
+				//System.out.print(f[n][k]);
+			}
+			//System.out.println();
+		}
+		System.out.println( f[Integer.parseInt(args[0])][Integer.parseInt(args[1])] );
+
+	}
+}

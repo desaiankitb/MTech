@@ -1,0 +1,30 @@
+class MakingChange
+{
+	public static void main(String args[])
+	{
+		int D[]={100,25,10,5,1};
+		int amount=0;
+		int sum = 17;
+		int coin[]={0,0,0,0,0};
+		int i=0;
+		int flag = 1;
+		while(i <= 4){
+			while(amount + D[i] <= sum)
+			{
+				amount = amount + D[i];
+				coin[i]++;
+				if(amount == sum)
+				{
+					for(int j=0;j<coin.length;j++)
+						System.out.println(D[j]+"*"+coin[j]+"=     "+(D[j]*coin[j]));
+					System.out.println("total  :"+sum);					
+					flag = 0;
+					break;
+				}
+			}
+			if(flag == 0)
+				break;
+			i++;
+		}
+	}
+}
