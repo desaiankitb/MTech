@@ -1,0 +1,9 @@
+A cpp graphics program that simulates the famous KBC show.
+
+i have not included features such as phone - a -friend  , audience etc.
+ 
+This is my first serious project in graphics and mouse programming.
+
+ur suggestions are invited
+
+contact  :atheek_rahman@yahoo.com
